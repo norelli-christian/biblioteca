@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../models/book';
+import { Observable, of } from 'rxjs';
 
 let BOOKS: Book[] = [
   {
@@ -41,7 +42,6 @@ let BOOKS: Book[] = [
 })
 export class BookService {
   constructor() { }
-  bookED: Book;
   selectedBook: Book = {
     ISBN: "",
     title: "",
@@ -76,8 +76,7 @@ newBook: Book = {
 };
 
   getBooks(): Book[] {
-    return BOOKS;
-  }
+    return BOOKS}
 
   
 }

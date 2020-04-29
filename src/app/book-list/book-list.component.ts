@@ -17,12 +17,10 @@ export class BookListComponent implements OnInit {
   ngOnInit(): void {
     this.books = this.bookService.getBooks();
   }
-  selectThisBook(book: Book): void{
-    this.bookService.bookED = book;
-  }
+  
 
 
   editBook(book: Book): void {
-    this.bookService.bookED = book;
+    this.bookService.selectedBook = book;
   }
 }
