@@ -1,0 +1,10 @@
+<h3>{{title}}</h3>
+<ul>
+    <li *ngFor="let book of books">
+      <span><img [src]=book.coverUrl width="150" height="150"></span> 
+      TITOLO: {{book.title}}  
+      AUTORE: {{book.author}}
+      <br><br>
+      <!--DATA PUBBLICAZIONE: {{book.publicationDate}} -->
+    </li>
+  </ul>
