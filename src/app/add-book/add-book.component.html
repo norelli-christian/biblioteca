@@ -1,14 +1,11 @@
 <h5>{{title}}</h5>
 <form>
     
-<div class="addBook">
-    <input type="text" placeholder="ISBN" [(ngModel)]="newBook.ISBN" name="ISBN"><br><br>
-    <input type="text" placeholder="Titolo" [(ngModel)]="newBook.title" name="title"><br><br>
-    <input type="text" placeholder="Autore" [(ngModel)]="newBook.author" name="author"><br><br>
-    <input type="text" placeholder="Pubblicazione" [(ngModel)]="newBook.publisher" name="publisher"><br><br>
-    <input type="date" [(ngModel)]="newBook.pubblicationDate" name="pubblicationDate">
-    <br>
-    <br>
+<div>
+    <input type="text" placeholder="ISBN" [(ngModel)]="bookService.newBook.ISBN" name="ISBN"><br><br>
+    <input type="text" placeholder="Titolo" [(ngModel)]="bookService.newBook.title" name="title"><br><br>
+    <input type="text" placeholder="Autore" [(ngModel)]="bookService.newBook.author" name="author"><br><br>
+    <input type="text" placeholder="Pubblicazione" [(ngModel)]="bookService.newBook.publisher" name="publisher"><br><br>
     <input type="submit" value="Aggiungi libro" (click)="add()">
 </div>
 </form>

@@ -1,0 +1,15 @@
+<div *ngIf="bookService.selectedBook">
+ <h5>{{title}}</h5>
+<form>
+    
+<div>
+    <input type="text" placeholder="ISBN" [(ngModel)]="bookService.bookED.author" name="ISBN"><br><br>
+    <input type="text" placeholder="Titolo" [(ngModel)]="bookService.bookED.title" name="title"><br><br>
+    <input type="text" placeholder="Autore" [(ngModel)]="bookService.bookED.author" name="author"><br><br>
+    <input type="text" placeholder="Pubblicazione" [(ngModel)]="bookService.bookED.publisher" name="publisher"><br><br>
+    <input type="submit" value="Modifica libro" (click)="save()">
+</div>
+</form>   
+</div>
+
+

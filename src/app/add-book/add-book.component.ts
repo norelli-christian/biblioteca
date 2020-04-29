@@ -9,32 +9,25 @@ import { BookService } from '../services/book.service';
 })
 export class AddBookComponent implements OnInit {
   title = "Aggiungi libro";
-  newBook: Book;
-
+  books: Book[];
   constructor(public bookService: BookService) { }
   
   ngOnInit(): void {
-      this.newBook = {
-      ISBN: "",
-      title: "",
-      author: "",
-      publisher: "",
-      publicationDate: new Date(),
-      coverUrl: ""
-    }
+    this.books = this.bookService.getBooks();
   };
-  add() {
-    this.bookService.addBook(this.newBook);
-    this.newBook = {
+  add() :void{
+    this.books.push(this.bookService.newBook);  
+    this.bookService.newBook = {
     ISBN: "",
     title: "",
     author: "",
     publisher: "",
     publicationDate: new Date(),
-    coverUrl: ""
+    coverUrl: "assets/images/Alis_sisu.256.292591.jpg"
   }
 
   
 }
 
 }
+

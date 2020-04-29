@@ -41,8 +41,15 @@ let BOOKS: Book[] = [
 })
 export class BookService {
   constructor() { }
-
-
+  bookED: Book;
+  selectedBook: Book = {
+    ISBN: "",
+    title: "",
+    author: "",
+    publisher: "",
+    publicationDate: new Date(),
+    coverUrl: "assets/images/Alis_sisu.256.292591.jpg",
+  };
   /*addBook(): Book {
     
     this.books.push(this.newBook);
@@ -59,13 +66,18 @@ export class BookService {
 }*/
   
 
-  
+newBook: Book = {
+  ISBN: "",
+  title: "",
+  author: "",
+  publisher: "",
+  publicationDate: new Date(),
+  coverUrl: "assets/images/Alis_sisu.256.292591.jpg"
+};
 
   getBooks(): Book[] {
     return BOOKS;
   }
 
-  addBook(book: Book){
-    BOOKS.push(book);
-  } 
+  
 }
