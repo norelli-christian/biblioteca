@@ -7,18 +7,22 @@ import { BookListComponent } from './book-list/book-list.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EditBookComponent } from './edit-book/edit-book.component';
+import {NgxWebstorageModule} from 'ngx-webstorage';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
     AddBookComponent,
-    EditBookComponent
+    EditBookComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgxWebstorageModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

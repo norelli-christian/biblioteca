@@ -22,5 +22,6 @@ export class BookListComponent implements OnInit {
 
   editBook(book: Book): void {
     this.bookService.selectedBook = book;
+    this.bookService.save2();
   }
 }
