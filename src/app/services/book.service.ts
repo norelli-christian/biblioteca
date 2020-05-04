@@ -1,85 +1,80 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../models/book';
 import {LocalStorageService, SessionStorageService} from 'ngx-webstorage';
-let BOOKS:Book[] =[
+
+
+const BOOKS: Book[] = [
+  
   {
-    ISBN:"A-0010-Z",
-    title:"La donna dei fiori di carta",
-    author:"Donato Carrisi",
-    publisher: "TEA",
-    publicationDate: new Date("Dec 08 2019"),
-    coverUrl:"assets/images/adobe-spark.png"
+    ISBN: "12425422",
+    title: "Piccole donne di Louisa May Alcott",
+    author: "Geronimo Stilton",
+    publisher: "Piemme",
+    publicationDate: "1-12-2017",
+    coverUrl: "assets/images/libro3.jpg",
   },
+
+
   {
-    ISBN:"A-0020-Z",
-    title:"La signora del martedì",
-    author:"Massimo Carlotto",
-    publisher:"E/O",
-    publicationDate: new Date("Gen 22 2020"),
-    coverUrl:"assets/images/Alis_sisu.256.292591.jpg"
+    ISBN: "1251653",
+    title: "La grande scommessa",
+    author: "Michael Lewis",
+    publisher: "Rizzoli",
+    publicationDate: "5-05-2015",
+    coverUrl: "assets/images/libro2.jpg",
   },
+
+
   {
-    ISBN:"A-0030-Z",
-    title:"La casa delle voci",
-    author:"Donato Carrisi",
-    publisher:"Longanesi",
-    publicationDate: new Date("Dec 11 2019"),
-    coverUrl:"https://via.placeholder.com/150?text=Book+cover"
-  },
+    ISBN: "13624222",
+    title: "Seme di strega",
+    author: "Margaret Atwood",
+    publisher: "Rizzoli",
+    publicationDate: "1-05-2000",
+    coverUrl: "assets/images/libro1.jpg",
+    },
+
+
   {
-    ISBN:"A-0030-Z",
-    title:"La misura del tempo",
-    author:"Gianrico Carofiglio",
-    publisher:"Einaudi",
-    publicationDate: new Date("Nov 05 2019"),
-    coverUrl:"https://via.placeholder.com/150?text=Book+cover"
+    ISBN: "2362323",
+    title: "Dire, fare, brasare. In 11 lezioni e 40 ricette tutte le tecniche per superarsi in cucina",
+    author: "Carlo Cracco",
+    publisher: "Rizzoli",
+    publicationDate: "4-30-2020",
+    coverUrl: "assets/images/libro4.jpg",
   }
-]
+
+];
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-  constructor(private localStorage:LocalStorageService) { }
+  booktoShow: Book;
+  books: Book[];
+
   selectedBook: Book = {
     ISBN: "",
     title: "",
     author: "",
     publisher: "",
-    publicationDate: new Date(),
-    coverUrl: "assets/images/Alis_sisu.256.292591.jpg",
+    publicationDate: "",
+    coverUrl: "assets/images/images.jpg",
   };
-  /*addBook(): Book {
-    
-    this.books.push(this.newBook);
 
-       this.newBook ={
-        ISBN:"",
-        title:"",
-        author:"",
-        publisher: "",
-        publicationDate: null,
-        coverUrl:""
-      
+  constructor(public localStorage:LocalStorageService) { }
+
+  getBooks(): Book[]{
+    this.books = this.localStorage.retrieve('books') || BOOKS;
+    return this.books;
   }
-}*/
+
+
+  saveBooksInLocalStorage(){
+    this.localStorage.store('books', this.books);
+  }
   
 
-newBook: Book = {
-  ISBN: "",
-  title: "",
-  author: "",
-  publisher: "",
-  publicationDate: new Date(),
-  coverUrl: "assets/images/Alis_sisu.256.292591.jpg"
-};
-
-  getBooks(): Book[] {
-    BOOKS = this.localStorage.retrieve('books') || BOOKS;
-    return BOOKS}
-
-    save2(){
-      this.localStorage.store('books',BOOKS);
-    }
 }

@@ -1,15 +1,32 @@
-<div *ngIf="bookService.selectedBook">
- <h5>{{title}}</h5>
-<form>
+
+<hr>
+
+<div *ngIf="service.booktoShow">
+<h2>{{ title }}</h2>
+
+    <div class="row">
+        <div class="col" style="margin-left: 10px;">
+        ISBN:<input type="text" class="form-control" placeholder="ISBN" [(ngModel)]="service.booktoShow.ISBN"> 
+        </div>
+
+        <div class="col" style="margin-left: 10px;">
+        Titolo:<input type="text" class="form-control" placeholder="Titolo" [(ngModel)]="service.booktoShow.title"> 
+        </div>
+
+        <div class="col" style="margin-left: 10px;">
+        Autore:<input type="text" class="form-control" placeholder="Autore" [(ngModel)]="service.booktoShow.author"> 
+        </div>
+
+        <div class="col" style="margin-left: 10px;">
+        Editore:<input type="text" class="form-control" placeholder="Editore" [(ngModel)]="service.booktoShow.publisher">
+        </div>
+        
+        <div class="col" style="margin-left: 10px;">
+        Data pubblicazione:<input type="date" class="form-control" placeholder="Data" [(ngModel)]="service.booktoShow.publicationDate">
+        </div>
+    </div>
     
-<div>
-    <input type="text" placeholder="ISBN" [(ngModel)]="bookService.selectedBook.author" name="ISBN"><br><br>
-    <input type="text" placeholder="Titolo" [(ngModel)]="bookService.selectedBook.title" name="title"><br><br>
-    <input type="text" placeholder="Autore" [(ngModel)]="bookService.selectedBook.author" name="author"><br><br>
-    <input type="text" placeholder="Pubblicazione" [(ngModel)]="bookService.selectedBook.publisher" name="publisher"><br><br>
-    <input type="submit" value="Modifica libro" (click)="save()">
-</div>
-</form>   
-</div>
 
-
+<br>
+    <button class="myButton" (click)="save()">Modifica libro</button>
+    </div>

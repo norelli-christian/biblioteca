@@ -8,20 +8,28 @@ import { BookService } from '../services/book.service';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  title:string = "Lista libri";
+  title: string = "Elenco Libri";
   books: Book[];
-  
+   
 
-  constructor(public bookService: BookService) { }
+  constructor(public service: BookService) { }
 
-  ngOnInit(): void {
-    this.books = this.bookService.getBooks();
+  ngOnInit() {
+    this.books = this.service.getBooks();
+    
+    for(let book of this.books){
+    }
   }
-  
+
+
+  selectThisBook(book: Book): void{
+    this.service.booktoShow = book;
+  }
 
 
   editBook(book: Book): void {
-    this.bookService.selectedBook = book;
-    this.bookService.save2();
+    this.service.booktoShow = book;
   }
+
+
 }

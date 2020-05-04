@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Biblioteca';
-  public isCollapsed = true;
-  public isMenuCollapsed = true;
+  title = 'Biblioteca Engim';
 }

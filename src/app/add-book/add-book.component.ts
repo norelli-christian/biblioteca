@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../models/book';
 import { BookService } from '../services/book.service';
-import { LocalStorageService } from 'ngx-webstorage';
+import { Book } from '../models/book';
 
 @Component({
   selector: 'app-add-book',
@@ -9,30 +8,30 @@ import { LocalStorageService } from 'ngx-webstorage';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
-  title = "Aggiungi libro";
+  title: string = "Aggiungi un libro"
   books: Book[];
-  constructor(public bookService: BookService,
-              private localStorage:LocalStorageService
-              ) 
-              { }
-  
+
+  constructor(public service: BookService) { }
+
   ngOnInit(): void {
-    this.books = this.bookService.getBooks();
-  };
-  add() :void{
-    this.books.push(this.bookService.newBook); 
-    this.books = this.localStorage.store('books',this.books); 
-    this.bookService.newBook = {
-    ISBN: "",
-    title: "",
-    author: "",
-    publisher: "",
-    publicationDate: new Date(),
-    coverUrl: "assets/images/Alis_sisu.256.292591.jpg"
+    this.books = this.service.getBooks();
   }
 
-  
-}
+
+  addBook(): void {
+    this.books.push(this.service.selectedBook);
+    this.service.localStorage.store('books', this.books);
+    this.service.selectedBook =  {
+      ISBN: "",
+      title: "",
+      author: "",
+      publisher: "",
+      publicationDate: "",
+      coverUrl: "assets/images/images.jpg",
+    }
+  }
+
+
+
 
 }
-
