@@ -73,6 +73,7 @@ export class BookService {
 
 
   saveBooksInLocalStorage(){
+    
     this.localStorage.store('books', this.books);
   }
   
