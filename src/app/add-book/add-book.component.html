@@ -1,35 +1,36 @@
-<hr>
-
+<div class="bgedit">
 <h2>{{ title }}</h2>
 
 
-<div class="row">
-<div class="col" style="margin-left: 10px;">
-  ISBN:  <input type="text" class="form-control" placeholder="ISBN" [(ngModel)]="service.selectedBook.ISBN"> 
-  <div class="error">{{errorISBN}}</div>
-  </div>
-
-  <div class="col">
-  Titolo: <input type="text" class="form-control" placeholder="Titolo" [(ngModel)]="service.selectedBook.title">
-  <div class="error">{{errorTitle}}</div>
-  </div>
-
-  <div class="col">
-  Autore: <input type="text" class="form-control" placeholder="Autore" [(ngModel)]="service.selectedBook.author">
-  <div class="error">{{errorAuthor}}</div>
-  </div>
-
-  <div class="col">
-  Editore: <input type="text" class="form-control" placeholder="Editore" [(ngModel)]="service.selectedBook.publisher">
-  <div class="error">{{errorPublisher}}</div>
-  </div>
-
-  <div class="col" style="margin-right: 10px;">
-  Data pubblicazione: <input type="date" class="form-control" placeholder="Data" [(ngModel)]="service.selectedBook.publicationDate">
-  <div class="error">{{errorPublicationDate}}</div>
-  </div>
-
+  <div class="row" >
+    <div class="col" style="margin-left: 10px;" >
+      ISBN:  <input type="text" class="form-control" placeholder="ISBN" [(ngModel)]="service.selectedBook.ISBN"> 
+      <div class="error">{{errorISBN}}</div>
+      </div>
+    
+      <div class="col">
+      Titolo: <input type="text" class="form-control" placeholder="Titolo" [(ngModel)]="service.selectedBook.title">
+      <div class="error">{{errorTitle}}</div>
+      </div>
+    
+      <div class="col">
+      Autore: <input type="text" class="form-control" placeholder="Autore" [(ngModel)]="service.selectedBook.author">
+      <div class="error">{{errorAuthor}}</div>
+      </div>
+    
+      <div class="col">
+      Editore: <input type="text" class="form-control" placeholder="Editore" [(ngModel)]="service.selectedBook.publisher">
+      <div class="error">{{errorPublisher}}</div>
+      </div>
+    
+      <div class="col" style="margin-right: 10px;">
+      Data pubblicazione: <input type="date" class="form-control" placeholder="Data" [(ngModel)]="service.selectedBook.publicationDate">
+      <div class="error">{{errorPublicationDate}}</div>
+      </div>
+    
+    
 </div>
 
-<br>
+
 <button class="myButton" (click)="addBook()">Aggiungi il libro</button>
+</div>

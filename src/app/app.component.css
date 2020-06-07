@@ -1,5 +1,13 @@
 h1{
-    color:rgb(59, 118, 141);
+    color:#073547;
     margin-left:25%;
 }
 
+body{
+	background-color: #89E6F2;
+}
+   
+.apptitle{
+    margin-left: 5%;
+    text-decoration: underline #073547 ;
+}

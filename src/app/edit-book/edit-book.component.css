@@ -26,3 +26,9 @@ body{
 .error{
 	color:red;
 }
+
+.bgedit{
+	background-color: #79C9D3;
+	border:0.5px solid #255C64;
+	margin-bottom: 1.2%;
+}
